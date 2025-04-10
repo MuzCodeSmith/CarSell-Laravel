@@ -74,3 +74,8 @@ route::prefix('admin')->group(function(){
         return "profile";
     });
 });
+
+// fallback
+route::fallback(function(){
+    return 'fallback route';
+});
