@@ -64,3 +64,13 @@ route::get('current-user',function(){
     // return redirect()->route('user');
     return to_route('user');
 });
+
+//route group
+route::prefix('admin')->group(function(){
+    Route::get('/settings',function(){
+        return "admin settings";
+    });
+    Route::get('/profile',function(){
+        return "profile";
+    });
+});
