@@ -13,7 +13,8 @@ Route::get('/products/{id?}', function ($id=null) {
     return "product id: $id";
 });
 
-// route validation
+// route validation -----------------------
+
 // example 1: only number
 Route::get('/user/{id}',function($id){
     return "user id: $id";
@@ -39,12 +40,27 @@ Route::get('/pass/{pass}',function($pass){
     return "language: $pass";
 })->where('pass','[a-z]+');
 
-// example 5: Regex - for multipe values
+// example 6: Regex - for multipe values
 Route::get('/lang/{lang}/course/{coursId}',function($lang,$coursId){
     return "course: $coursId and language: $lang";
 })->where(['lang'=>'[a-z]{2}','coursId'=>'\d{4}']);
 
-// example 5: Regex - with special chars
+// example 7: Regex - with special chars
 Route::get('/search/{query}',function($query){
     return "search query:$query";
 })->where('query','.+');
+
+//named routes ----------------------
+
+route::get('userProfile',function(){
+    return 'user';
+})->name('user');
+
+route::get('user',function(){
+    // return redirect()->route('user');
+    return to_route('user');
+});
+route::get('current-user',function(){
+    // return redirect()->route('user');
+    return to_route('user');
+});
