@@ -79,3 +79,8 @@ route::prefix('admin')->group(function(){
 route::fallback(function(){
     return 'fallback route';
 });
+
+// challenge: return some of route parameters
+route::get('/sum/{num1}/{num2}',function($num1,$num2){
+    return "sum: $num1 + $num2 is".$num1+$num2;
+})->whereNumber('num1','num2');
