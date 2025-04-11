@@ -87,3 +87,6 @@ use App\Http\Controllers\UserController;
 // })->whereNumber('num1','num2');
 
 // ----------------------------------------------------------------------------
+
+// controllers 
+route::get('/users',[UserController::class,'index']);
