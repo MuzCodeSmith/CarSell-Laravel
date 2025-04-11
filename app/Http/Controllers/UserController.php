@@ -10,6 +10,9 @@ class UserController extends Controller
     function index(){
         return 'user index';
     }
+    function setting(){
+        return 'user setting';
+    }
 }
 
 

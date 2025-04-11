@@ -77,16 +77,22 @@ use App\Http\Controllers\UserController;
 // });
 
 // fallback
-// route::fallback(function(){
+// Route::fallback(function(){
 //     return 'fallback route';
 // });
 
 // challenge: return some of route parameters
-// route::get('/sum/{num1}/{num2}',function($num1,$num2){
+// Route::get('/sum/{num1}/{num2}',function($num1,$num2){
 //     return "sum: $num1 + $num2 is".$num1+$num2;
 // })->whereNumber('num1','num2');
 
 // ----------------------------------------------------------------------------
 
 // controllers 
-route::get('/users',[UserController::class,'index']);
+// Route::get('/users',[UserController::class,'index']);
+
+// controller group
+Route::controller(UserController::class)->group(function(){
+    Route::get('/users','index');
+    Route::get('/user-setting','setting');
+});
