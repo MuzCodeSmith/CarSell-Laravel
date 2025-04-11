@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CarController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -92,7 +93,10 @@ use App\Http\Controllers\UserController;
 // Route::get('/users',[UserController::class,'index']);
 
 // controller group
-Route::controller(UserController::class)->group(function(){
-    Route::get('/users','index');
-    Route::get('/user-setting','setting');
-});
+// Route::controller(UserController::class)->group(function(){
+//     Route::get('/users','index');
+//     Route::get('/user-setting','setting');
+// });
+
+Route::get('/cars',CarController::class);
+Route::get('/cars/1',[CarController::class,'index']);
