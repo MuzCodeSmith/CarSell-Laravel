@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\HelloController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -99,4 +100,13 @@ use App\Http\Controllers\CarController;
 // });
 
 // Route::get('/cars',CarController::class);
-Route::get('/cars',[CarController::class,'index']);
+// Route::get('/cars',[CarController::class,'index']);
+
+
+
+// Challenge:
+// Create HelloController with welcome method. Create welcome view using artisan and put it in hello subfolder. From HelloController::welcome method render welcome view you just created.
+// Pass your name and surname to the view and output it in blade file. Define route /hello so that when you access it, it will output your name and surname.
+
+Route::get('/hello',[HelloController::class,'Welcome']);
+
