@@ -16,6 +16,6 @@ class CarController extends Controller
     }
 
     public function index(){
-        return "index";
+        return view('Home.home');
     }
 }

@@ -98,5 +98,5 @@ use App\Http\Controllers\CarController;
 //     Route::get('/user-setting','setting');
 // });
 
-Route::get('/cars',CarController::class);
-Route::get('/cars/1',[CarController::class,'index']);
+// Route::get('/cars',CarController::class);
+Route::get('/cars',[CarController::class,'index']);
