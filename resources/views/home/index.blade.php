@@ -1,6 +1,5 @@
 @extends('Layouts.app')
 @section('title','Home')
-
 @section('content')
 
     <!-- Home Slider -->
