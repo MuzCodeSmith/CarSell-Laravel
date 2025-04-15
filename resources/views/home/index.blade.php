@@ -90,7 +90,15 @@
       </div>
     </section>
     <!--/ Home Slider -->
-
+    <x-card>
+      <x-slot name="title">
+        card title 1
+      </x-slot>
+      <x-slot name="body">
+        card bodyle 1
+      </x-slot>
+    </x-card>
+   
     <main>
       <!-- Find a car form -->
       <section class="find-a-car">
