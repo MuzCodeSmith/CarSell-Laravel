@@ -11,9 +11,13 @@ class SearchForm extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+
+   
+
+    public function __construct(public string $action="/search", public string $method="GET")
     {
-        //
+        
+       
     }
 
     /**
