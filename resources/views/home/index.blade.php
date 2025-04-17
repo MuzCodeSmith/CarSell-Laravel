@@ -1,5 +1,4 @@
-<x-app-layout>
-  
+<x-app-layout title="Home Page" >
   <x-admin.card class="custom-class" color="blue"  bgColor="white" >
       <x-slot:title class="card-title-blue">Card Title</x-slot>
       content 1
@@ -668,11 +667,10 @@
       <!--/ New Cars -->
     </main>
 
-    @section('footerLinks')
-      @parent
+    <x-slot:footerLinks>
       <a href="#">Link 3</a>
       <a href="#">Link 4</a>
-    @endsection
+    </x-slot:footerLinks>
     
 </x-app-layout>
   
