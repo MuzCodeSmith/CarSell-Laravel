@@ -1,5 +1,5 @@
 
-<div {{$attributes}} class="card card-text-{{$color}} card-bg-{{$bgColor}}">
+<div {{$attributes->merge(['lang'=>'ka'])->class("card card-text-$color card-bg-$bgColor")}}>
     @isset($title)
     <div class="card-header" >{{$title}}</div>
     @endisset

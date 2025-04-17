@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('content')
 
-    <x-admin.card color="blue" lang="en" bgColor="white">
+    <x-admin.card class="custom-class" color="blue"  bgColor="white" >
       <x-slot:title>Card Title</x-slot>
       content 1
       <x-slot:footer>
