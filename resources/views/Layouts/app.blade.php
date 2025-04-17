@@ -1,10 +1,10 @@
-  @extends('Layouts.clean')
-  @section('childContent')
-    @include('Layouts.partials.header')
-      @yield('content')
-    @hasSection('footerLinks')
-      <footer>
-        @yield('footerLinks')
-      </footer>
-    @endif
-  @endsection
+<x-base-layout >
+  @include('Layouts.partials.header')
+  {{$slot}}
+  <footer>
+    @section('footerLinks')
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    @show
+  </footer>
+</x-base-layout>

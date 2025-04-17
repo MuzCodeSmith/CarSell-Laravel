@@ -1,18 +1,15 @@
-@extends('Layouts.app')
-@section('title','Home')
-@section('content')
-
-    <x-admin.card class="custom-class" color="blue"  bgColor="white" >
-      <x-slot:title>Card Title</x-slot>
+<x-app-layout>
+  
+  <x-admin.card class="custom-class" color="blue"  bgColor="white" >
+      <x-slot:title class="card-title-blue">Card Title</x-slot>
       content 1
       <x-slot:footer>
         <button>cancel</button>
         <button>submit</button>
       </x-slot>
-    </x-admin.card>
-   
+  </x-admin.card>
 
-    <!-- Home Slider -->
+  <!-- Home Slider -->
     <section class="hero-slider">
       <!-- Carousel wrapper -->
       <div class="hero-slides">
@@ -676,5 +673,6 @@
       <a href="#">Link 3</a>
       <a href="#">Link 4</a>
     @endsection
-
-@endsection
+    
+</x-app-layout>
+  
