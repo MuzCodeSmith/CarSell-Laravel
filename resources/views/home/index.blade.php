@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('content')
 
-    <x-admin.card>
+    <x-admin.card color="blue" lang="en" bgColor="white">
       <x-slot:title>Card Title</x-slot>
       content 1
       <x-slot:footer>
@@ -10,11 +10,7 @@
         <button>submit</button>
       </x-slot>
     </x-admin.card>
-    <x-admin.card>
-      content 2
-    </x-admin.card>
-    <x-admin.card>
-    </x-admin.card>
+   
 
     <!-- Home Slider -->
     <section class="hero-slider">

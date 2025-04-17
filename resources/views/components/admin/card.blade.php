@@ -1,10 +1,8 @@
-<div>
-    @if(empty($title))
-        Default Title
-    @else    
-        <h1 class="card-header" >{{$title}}</h1>
-    @endif
 
+<div {{$attributes}} class="card card-text-{{$color}} card-bg-{{$bgColor}}">
+    @isset($title)
+    <div class="card-header" >{{$title}}</div>
+    @endisset
     @if($slot->isEmpty())
         Default Content
     @else
