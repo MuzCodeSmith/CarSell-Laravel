@@ -14,7 +14,7 @@ class SearchForm extends Component
 
    
 
-    public function __construct(public string $action="/search", public string $method="GET")
+    public function __construct()
     {
         
        
