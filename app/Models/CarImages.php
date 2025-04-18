@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class CarImages extends Model
 {
-    //
+    public $timestamps = false;
+
 }
