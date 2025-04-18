@@ -1,13 +1,4 @@
 <x-app-layout title="Home Page" >
-  <x-admin.card class="custom-class" color="blue"  bgColor="white" >
-      <x-slot:title class="card-title-blue">Card Title</x-slot>
-      content 1
-      <x-slot:footer>
-        <button>cancel</button>
-        <button>submit</button>
-      </x-slot>
-  </x-admin.card>
-
   <!-- Home Slider -->
     <section class="hero-slider">
       <!-- Carousel wrapper -->
@@ -114,11 +105,5 @@
       </section>
       <!--/ New Cars -->
     </main>
-
-    <x-slot:footerLinks>
-      <a href="#">Link 3</a>
-      <a href="#">Link 4</a>
-    </x-slot:footerLinks>
-    
 </x-app-layout>
   
