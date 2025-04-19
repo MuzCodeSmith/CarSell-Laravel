@@ -46,13 +46,13 @@ class HomeController extends Controller
         // $record = Car::create($cardata);
 
     // Approach 2
-    $car2 = new Car();
-    $car2->fill($cardata);
-    $car2->save();
+    // $car2 = new Car();
+    // $car2->fill($cardata);
+    // $car2->save();
 
     // Approch 3
-    // $car3= new Car($cardata);
-    // $car3->save();
+    $car3= new Car($cardata);
+    $car3->save();
 
 
         return view('home.index');
