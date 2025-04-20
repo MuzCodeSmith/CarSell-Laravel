@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\CarFeatures;
 use App\Models\CarImage;
+use App\Models\CarType;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,37 +16,23 @@ class HomeController extends Controller
         // get car data
         $car = Car::find(15);
 
-        // creating new single image for  car 
+        
+        // approch 1
+        // $carType = CarType::where('name','Hatchback')->first();
+        // approch 2
+        // $cars = Car::whereBelongsTo($carType)->get();
 
-        // approach 1
-        // $carImage = new CarImage([
-        //     'position' => 1,
-        //     'image_path' => 'image1'
-        // ]);
+        // udpating records using one to many relationship
 
-        // $car->images()->save($carImage);
+        $carType = CarType::where('name','Hatchback')->first();
 
-        // // approach 2 
-        // $car->images()->create([
-        //     'position' => 2,
-        //     'image_path' => 'image2'
-        // ]);
+        // approch 1
+        // $car->car_type_id = $carType->id;
 
-        // creating records in bulk
-        // apporch 1
-        // $car->images()->saveMany([
-        //     new CarImage(['position' => 3,'image_path' => 'image3']),
-        //     new CarImage(['position' => 34,'image_path' => 'image4'])
-        // ]);
+        // approch 2
+        $car->carType()->associate($carType);
+        $car->save();
 
-        // apporch 2
-        $car->images()->createMany([
-            ['position' => 3,'image_path' => 'image3'],
-            ['position' => 4,'image_path' => 'image4']
-        ]);
-
-
-        // dump($car->images);
         
         return view('home.index');
     }
