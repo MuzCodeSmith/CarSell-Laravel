@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\User;
 use App\Models\CarFeatures;
 use App\Models\CarImage;
 use App\Models\CarType;
@@ -15,25 +16,18 @@ class HomeController extends Controller
 
         // get car data
         $car = Car::find(15);
-
-        
         // approch 1
-        // $carType = CarType::where('name','Hatchback')->first();
-        // approch 2
-        // $cars = Car::whereBelongsTo($carType)->get();
-
-        // udpating records using one to many relationship
-
-        $carType = CarType::where('name','Hatchback')->first();
-
-        // approch 1
-        // $car->car_type_id = $carType->id;
+        // dump($car->favouredUsers);
 
         // approch 2
-        $car->carType()->associate($carType);
-        $car->save();
+        $user = User::find(1);
 
-        
+        // $user->favouriteCars()->detach(15);
+        // $user->favouriteCars()->attach(15);
+        $user->favouriteCars()->sync([]);
+
+        dump($user->favouriteCars);
+
         return view('home.index');
     }
 }
