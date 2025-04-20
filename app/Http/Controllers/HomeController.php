@@ -14,12 +14,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-
-        // $maker =Maker::factory()->create();
-        // dd($maker);
-
-        Maker::factory()->count(5)->hasModels(5)->create();
-
+        User::factory()->has(Car::factory()->count(5),'favouriteCars')->create();
         return view('home.index');
     }
 }

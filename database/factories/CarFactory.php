@@ -25,7 +25,8 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            'maker_id'=>Maker::inRandomOrder()->first()->id,
+            // 'maker_id'=>Maker::inRandomOrder()->first()->id,
+            'maker_id' => optional(Maker::inRandomOrder()->first())->id,
             'model_id'=>function(array $attributes){
                 return Model::where('maker_id',$attributes['maker_id'])
                 ->inRandomOrder()->first()->id;
