@@ -10,16 +10,27 @@ class HomeController extends Controller
 {
     public function index(){
 
-        // single record delete with softdelte
-        // $car = Car::find(1);
-        // $car->delete();
+        // get car data
+        $car = Car::find(15);
 
-        // mass delete with softdelete
-        // $cars = Car::where('vin',222)->where('price',35000)->delete();
+
+        // and updating data with releationship
+
+        // approach 1
+        // $car->features->update(['power_door_locks'=>1]);
+
+        // approach 2
+        // $car->features->abs=0;
+        // $car->save();
+
+        // deleting record using reletionship 
+        $car->primaryImage->delete();
+        // dump($car->features);
+        dump($car->primaryImage);
+
         
-        // actually delte database record
-        // Car::truncate();
         return view('home.index');
+
 
 
     }
