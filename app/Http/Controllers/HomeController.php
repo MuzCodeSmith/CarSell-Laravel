@@ -18,7 +18,7 @@ class HomeController extends Controller
         // $cars = Car::where('vin',222)->where('price',35000)->delete();
         
         // actually delte database record
-        Car::truncate();
+        // Car::truncate();
         return view('home.index');
 
 
