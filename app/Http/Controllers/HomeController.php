@@ -8,25 +8,17 @@ use App\Models\User;
 use App\Models\CarFeatures;
 use App\Models\CarImage;
 use App\Models\CarType;
+use App\Models\Maker;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(){
 
-        // get car data
-        $car = Car::find(15);
-        // approch 1
-        // dump($car->favouredUsers);
+        // $maker =Maker::factory()->create();
+        // dd($maker);
 
-        // approch 2
-        $user = User::find(1);
-
-        // $user->favouriteCars()->detach(15);
-        // $user->favouriteCars()->attach(15);
-        $user->favouriteCars()->sync([]);
-
-        dump($user->favouriteCars);
+        Maker::factory()->count(5)->hasModels(5)->create();
 
         return view('home.index');
     }
