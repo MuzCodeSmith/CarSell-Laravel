@@ -14,7 +14,11 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        User::factory()->has(Car::factory()->count(5),'favouriteCars')->create();
-        return view('home.index');
+
+        $cars = Car::where('published_at','<',now())
+        ->orderBy('published_at','desc')
+        ->limit(30)
+        ->get();
+        return view('home.index',['cars'=>$cars]);
     }
 }

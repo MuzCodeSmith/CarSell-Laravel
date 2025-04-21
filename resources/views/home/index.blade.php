@@ -97,9 +97,9 @@
         <div class="container">
           <h2>Latest Added Cars</h2>
           <div class="car-items-listing">
-            @for($i=0;$i<15;$i++)
-            <x-car-item></x-car-item>
-            @endfor
+            @foreach($cars as $car)
+            <x-car-item :$car ></x-car-item>
+            @endforeach
           </div>
         </div>
       </section>
