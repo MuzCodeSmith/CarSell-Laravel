@@ -72,4 +72,9 @@ class CarsController extends Controller
         $cars = $query->limit(30)->get();
         return view('car.search',['cars'=>$cars, 'carCount'=>$carCount]);
     }
+
+    public function watchlist(){
+        $cars = User::find(2)->favouriteCars;
+        return view('car.watchlist',['cars'=>$cars]);
+    }
 }

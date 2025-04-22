@@ -8,6 +8,7 @@ use App\Http\Controllers\CarsController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/car/search',[CarsController::class,'search'])->name('car.search');
+Route::get('/car/watchlist',[CarsController::class,'watchlist'])->name('car.watchlist');
 Route::resource('car',CarsController::class);
 Route::get('/signup',[SignupController::class,'create'])->name('signup');
 Route::get('/login',[LoginController::class,'create'])->name('login');
