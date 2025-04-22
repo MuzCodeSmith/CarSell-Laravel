@@ -64,7 +64,7 @@
                                 Abs
                             </x-car-specification>
                             <x-car-specification :feature="$car->features->air_conditioning">
-                            Air Conditioning	
+                            Air Conditioning
                             </x-car-specification>
                             <x-car-specification :feature="$car->features->power_windows">
                             Power Windows

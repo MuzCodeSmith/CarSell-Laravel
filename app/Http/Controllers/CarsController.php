@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CarsController extends Controller
@@ -13,7 +14,8 @@ class CarsController extends Controller
      */
     public function index()
     {
-        return view('car.index');
+        $cars = User::find(1)->cars()->orderBy('created_at','desc')->get();
+        return view('car.index',['cars'=>$cars]);
     }
 
     /**
