@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -66,5 +67,8 @@ class Car extends EloquentModel
     }
     public function city():BelongsTo{
         return $this->belongsTo(City::class);
+    }
+    public function getCreatedDate():string{
+        return (new Carbon($this->created_at))->format('Y-m-d');
     }
 }
