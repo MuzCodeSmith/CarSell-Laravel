@@ -14,7 +14,7 @@ class CarsController extends Controller
      */
     public function index()
     {
-        $cars = User::find(1)->cars()->orderBy('created_at','desc')->get();
+        $cars = User::find(5)->cars()->orderBy('created_at','desc')->get();
         return view('car.index',['cars'=>$cars]);
     }
 
