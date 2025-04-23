@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -72,6 +73,10 @@ class CarsController extends Controller
         $query= Car::where('published_at','<',now())
         ->with(['primaryImage','city','carType','fuelType','maker','model'])
         ->orderBy('published_at','desc');
+
+        $query->join('cities','cities.id','=','cars.city_id')
+        ->where('cities.state_id',1);
+
         $carCount = $query->count();
         $cars = $query->limit(30)->get();
         return view('car.search',['cars'=>$cars, 'carCount'=>$carCount]);
